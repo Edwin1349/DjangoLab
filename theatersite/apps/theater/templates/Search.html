@@ -1,0 +1,69 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="uk">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script id="blockOfStuff" type="text/html">
+        <a href="{% url 'info'}"  class="url">
+        <div class="info_block">
+            <table class="info">
+                <tbody>
+                    <tr>
+                        <td class="info_left">	       
+                            <div class="author"><i>Автор 1</i></div>           
+                            <h2  class="performance_name">Вистава 1</h2>
+                            <span class="time">початок о 16:00 год</span>	  
+                        </td>	  
+                        <td class="info_right">
+                            <span class="day_name">Неділя</span><br>	  	
+                            <span class="day_num">1</span><br>	  
+                            <span class="month_name">Березня</span>	  
+                        </td>	  
+                    </tr>	 
+                </tbody>
+            </table>
+        </div>
+        </a>
+    </script>
+
+    <div class="homegrid_container">
+
+        <div class="header">
+            <h1><a href="{% url 'index' %}">Театральна афіша</a></h1>
+        </div>
+
+        <div class="nav"> 
+            <a href="{% url 'index' %}"><div id="nav">Афіша</div></a>
+            <a href="{% url 'search' %}"><div id="nav">Пошук</div></a>
+            <a href="{% url 'tickets' %}"><div id="nav">Квитки</div></a>
+        </div>
+
+        <div class="content_wrap">
+            <div class="content_block_main">
+                <div id="search" style="padding-bottom:2vh"> 
+                    <input type="text" id="name" autocomplete="off">
+                    <input type="submit" value="Знайти" id="search_button" >
+                </div>
+
+                <div class="list" id="list"></div>
+
+            </div> 
+            
+        </div>
+        <div class="pagenumbers" id="pagination"></div>
+        <div class="footer">
+                <h1>footer info</h1>
+        </div>
+    </div>
+    
+</body>
+<script src="{% static 'js/script_search.js' %}"></script>
+</html>

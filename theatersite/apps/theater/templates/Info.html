@@ -1,0 +1,48 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="uk">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="grid_container">
+
+        <div class="header">
+            <h1><a href="{% url 'index' %}">Театральна афіша</a></h1>
+        </div>
+
+        <div class="nav"> 
+            <a href="{% url 'index' %}"><div id="nav">Афіша</div></a>
+            <a href="{% url 'search' %}"><div id="nav">Пошук</div></a>
+            <a href="{% url 'tickets' %}"><div id="nav">Квитки</div></a>
+        </div>
+
+        <div class="description_wrap">
+            <div class="description_block_main">
+                <div class="description_block">
+                        {% block content%}
+                        
+                        <h1>{{performance.performance_name}}</h1><br>
+                        <h3>{{performance.description}}</h3><br>
+                        <p>{{performance.director}}</p><br>
+                        <p>{{performance.length|time:"H\год. i\хв."}}</p>
+
+                        {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+                <h1>footer info</h1>
+        </div>
+
+    </div>
+    
+</body>
+    <script src="{% static 'js/script_info.js' %}"></script>
+</html>

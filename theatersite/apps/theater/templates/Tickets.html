@@ -1,0 +1,40 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="uk">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="grid_container">
+
+        <div class="header">
+            <h1><a href="{% url 'index' %}">Театральна афіша</a></h1>
+        </div>
+
+        <div class="nav"> 
+            <a href="{% url 'index' %}"><div id="nav">Афіша</div></a>
+            <a href="{% url 'search' %}"><div id="nav">Пошук</div></a>
+            <a href="{% url 'tickets' %}"><div id="nav">Квитки</div></a>
+        </div>
+
+        <div class="content_wrap">
+            <div class="content_block_main">
+                <div class="content_block">
+                    <h2>Інформація про квитки</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+                <h1>footer info</h1>
+        </div>
+
+    </div>
+    
+</body>
+</html>
